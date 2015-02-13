@@ -10,11 +10,11 @@ Docker image for logstash
 
 If you want to run everything:
 
-   docker create --name es-data elasticsearch:1.4.3
-   docker run --name es -d --volumes-from es-data elasticsearch:1.4.3
-   docker run --name logstash -d --link es:elasticsearch fgaudin/logstash
-   docker run --name nginx -d --link logstash:logstash --volumes-from logstash -p 8082:80 fgaudin/nginx
-   docker run --name kibana -d --link es:elasticsearch -p 15601:5601 fgaudin/kibana
+    docker create --name es-data elasticsearch:1.4.3
+    docker run --name es -d --volumes-from es-data elasticsearch:1.4.3
+    docker run --name logstash -d --link es:elasticsearch fgaudin/logstash
+    docker run --name nginx -d --link logstash:logstash --volumes-from logstash -p 8082:80 fgaudin/nginx
+    docker run --name kibana -d --link es:elasticsearch -p 15601:5601 fgaudin/kibana
 
 Nginx is based on [dockerfile/nginx](https://registry.hub.docker.com/u/dockerfile/nginx/) and sends its logs to lostash.
 
