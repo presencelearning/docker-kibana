@@ -1,7 +1,7 @@
-FROM dockerfile/java:oracle-java8
+FROM ubuntu:14.04
 MAINTAINER Francois Gaudin <francois@presencelearning.com>
 
-RUN wget -O kibana.tar.gz https://download.elasticsearch.org/kibana/kibana/kibana-4.0.0-rc1-linux-x64.tar.gz \
+RUN apt-get install -y wget && wget -O kibana.tar.gz https://download.elasticsearch.org/kibana/kibana/kibana-4.0.0-rc1-linux-x64.tar.gz \
   && mkdir -p /opt/kibana && tar xzf kibana.tar.gz -C /opt/kibana --strip-components=1 \
   && rm kibana.tar.gz
 
