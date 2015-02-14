@@ -7,4 +7,4 @@ if [ -n "$ELASTICSEARCH_PORT_9200_TCP_ADDR" ]; then
 fi
 printf '%s\n' "$config" >/opt/kibana/config/kibana.yml
 
-exec "$@"
+eval "$@"
