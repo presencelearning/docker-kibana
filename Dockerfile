@@ -1,4 +1,4 @@
-FROM fgaudin/base:2
+FROM fgaudin/base:3
 MAINTAINER Francois Gaudin <francois@presencelearning.com>
 
 RUN groupadd kibana -g 105601 && useradd kibana -u 105601 -d /opt/kibana -s /usr/sbin/nologin -g 105601
